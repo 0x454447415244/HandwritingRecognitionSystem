@@ -6,6 +6,8 @@ This code is free for academic and research use. For commercial use of the code 
 
 To help run the system, sample images from [ICDAR2017 Competition on Handwritten Text Recognition on the READ Dataset](https://scriptnet.iit.demokritos.gr/competitions/8/) are added.
 
+![alt text](https://github.com/0x454447415244/HandwritingRecognitionSystem/raw/master/image.jpg)
+
 ## Configuration
 General configuration can be found in config.py
 
