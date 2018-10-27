@@ -8,6 +8,7 @@ To help run the system, sample images from [ICDAR2017 Competition on Handwritten
 
 ## Configuration
 General configuration can be found in config.py
+
 CNN-specific architecture configuration can be found in cnn.py
 
 ## Training
