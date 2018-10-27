@@ -2,7 +2,7 @@
 
 This repository is the Tensorflow implementation of the Handwriting Recognition System described in [Handwriting Recognition of Historical Documents with Few Labeled Data](https://ieeexplore.ieee.org/document/8395169). Please cite the paper if you use this code in your research paper.
 
-This code is free for academic and research use. For commercial use of the code please contact [Edgard Chammas](edgard@balamand.edu.lb).
+This code is free for academic and research use. For commercial use of the code please contact [Edgard Chammas](mailto:edgard@balamand.edu.lb).
 
 To help run the system, sample images from [ICDAR2017 Competition on Handwritten Text Recognition on the READ Dataset](https://scriptnet.iit.demokritos.gr/competitions/8/) are added.
 
