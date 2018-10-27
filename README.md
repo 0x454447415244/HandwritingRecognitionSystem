@@ -32,7 +32,7 @@ This will generate, for each image, the posterior probabilities at each timestep
 - Tensorflow
 - OpenCV-Python
 
-# Citation
+## Citation
 Please cite the following paper if you use this code in your research paper:
 ```
 @inproceedings{chammas2018handwriting,
@@ -45,6 +45,6 @@ Please cite the following paper if you use this code in your research paper:
 }
 ```
 
-# Contributions
+## Contributions
 Feel free to send your pull request or open issues.
 
