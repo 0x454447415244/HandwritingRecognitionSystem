@@ -1,15 +1,14 @@
 # Handwriting Recognition System
 
-This repository is the Tensorflow implementation of the Handwriting Recognition System described in [Handwriting Recognition of Historical Documents with Few Labeled Data](https://ieeexplore.ieee.org/document/8395169). Please cite the paper if you use this code in your research paper.
+This repository is the Tensorflow implementation of the Handwriting Recognition System described in [Handwriting Recognition of Historical Documents with Few Labeled Data](https://www.researchgate.net/publication/325993975_Handwriting_Recognition_of_Historical_Documents_with_Few_Labeled_Data). Please cite the paper if you use this code in your research paper.
 
 This code is free for academic and research use. For commercial use of the code please contact [Edgard Chammas](mailto:edgard@balamand.edu.lb).
 
 To help run the system, sample images from [ICDAR2017 Competition on Handwritten Text Recognition on the READ Dataset](https://scriptnet.iit.demokritos.gr/competitions/8/) are added.
 
 ## Configuration
-General configuration can be found in config.py.
-
-CNN-specific architecture configuration can be found in cnn.py.
+General configuration can be found in config.py
+CNN-specific architecture configuration can be found in cnn.py
 
 ## Training
 ```
