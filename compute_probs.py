@@ -112,7 +112,7 @@ try:
 		end += cfg.BatchSize
 		batch += 1
 
-except (KeyboardInterrupt, SystemExit, Exception), e:
+except (KeyboardInterrupt, SystemExit, Exception) as e:
 	print("[Error/Interruption] %s" % str(e))
 	print("Clossing TF Session...")
 	session.close()

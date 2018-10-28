@@ -251,7 +251,7 @@ try:
 
 			LogFile.write("######################################################\n\n")
 
-except (KeyboardInterrupt, SystemExit, Exception), e:
+except (KeyboardInterrupt, SystemExit, Exception) as e:
 	print("[Error/Interruption] %s\n" % str(e))
 	LogFile.write("[Error/Interruption] %s\n" % str(e))
 	LogFile.write("Clossing TF Session...\n")

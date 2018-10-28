@@ -1,3 +1,4 @@
+from __future__ import print_function
 ###
 # Copyright 2018 Edgard Chammas. All Rights Reserved.
 # Licensed under the Creative Commons Attribution-NonCommercial International Public License, Version 4.0.
@@ -115,7 +116,7 @@ try:
 
 			decodedStr = filename + decodedStr[:] + "\n"
 			if cfg.WriteDecodedToFile == True: DecodeLog.write(decodedStr)
-			else: print decodedStr,
+			else: print(decodedStr, end=' ')
 
 		start += cfg.BatchSize
 		end += cfg.BatchSize
@@ -123,7 +124,7 @@ try:
 
 	DecodeLog.close()
 
-except (KeyboardInterrupt, SystemExit, Exception), e:
+except (KeyboardInterrupt, SystemExit, Exception) as e:
 	print("[Error/Interruption] %s" % str(e))
 	print("Clossing TF Session...")
 	session.close()
