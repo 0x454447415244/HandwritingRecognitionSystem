@@ -15,8 +15,11 @@ import numpy as np
 import codecs
 import math
 
-reload(sys)  
-sys.setdefaultencoding('utf8')
+try:
+	reload(sys)  # Python 2
+	sys.setdefaultencoding('utf8')
+except NameError:
+	pass         # Python 3
 
 from config import cfg
 from util import LoadClasses
