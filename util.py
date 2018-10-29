@@ -16,7 +16,7 @@ from config import cfg
 
 def LoadList(path):
     with open(path) as vlist:
-	return vlist.readlines()
+        return vlist.readlines()
 
 #Ref: https://stackoverflow.com/questions/33949786/how-could-i-use-batch-normalization-in-tensorflow
 def batch_norm_conv(x, n_out, phase_train):
