@@ -167,7 +167,7 @@ try:
 			if currTrainLoss < Loss: LogFile.write("Bad\n")
 			else: LogFile.write("Good\n")
 
-		  	start += cfg.BatchSize
+			start += cfg.BatchSize
 			end += cfg.BatchSize
 			batch += 1
 
