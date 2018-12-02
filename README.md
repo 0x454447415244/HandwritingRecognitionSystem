@@ -52,6 +52,8 @@ Please cite the following paper if you use this code in your research paper:
 ## Acknowledgment
 We gratefully acknowledge the support of NVIDIA Corporation with the donation of the Titan Xp GPU used for this research.
 
+<img src="https://upload.wikimedia.org/wikipedia/sco/thumb/2/21/Nvidia_logo.svg/1280px-Nvidia_logo.svg.png" width="30%">
+
 ## Contributions
 Feel free to send your pull request or open issues.
 
