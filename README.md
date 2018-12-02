@@ -19,7 +19,7 @@ python train.py
 ```
 This will generate a text log file and a Tensorflow summary.
 
-<img src="https://github.com/0x454447415244/HandwritingRecognitionSystem/raw/master/TensorBoard.jpg" width="30%">
+<img src="https://github.com/0x454447415244/HandwritingRecognitionSystem/blob/master/TensorBoard.png" width="30%">
 
 ## Decoding
 ```
