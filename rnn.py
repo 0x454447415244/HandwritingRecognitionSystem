@@ -80,14 +80,6 @@ def RNN(Inputs, SeqLens, Scope):
 
 		[fw_out, bw_out], _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward, cell_bw=backward, inputs=Inputs, time_major=True, dtype=tf.float32,sequence_length=tf.cast(SeqLens, tf.int64))
 
-		# Batch normalize forward output
-		mew,var_ = tf.nn.moments(fw_out,axes=[0])
-		fw_out = tf.nn.batch_normalization(fw_out, mew, var_, 0.1, 1, 1e-6)
-
-		# Batch normalize backward output
-		mew,var_ = tf.nn.moments(bw_out,axes=[0])
-		bw_out = tf.nn.batch_normalization(bw_out, mew, var_, 0.1, 1, 1e-6)
-
 		# Reshaping forward, and backward outputs for affine transformation
 		fw_out = tf.reshape(fw_out,[-1, cfg.NUnits])
 		bw_out = tf.reshape(bw_out,[-1, cfg.NUnits])
