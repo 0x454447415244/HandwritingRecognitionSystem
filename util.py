@@ -65,8 +65,8 @@ def LoadClasses(path):
     return data
 
 def LoadList(path):
-    with open(path) as vlist:
-	return vlist.readlines()
+	with open(path) as vlist:
+		return vlist.readlines()
 
 def LoadModel(session, path):
     saver = tf.train.Saver()
@@ -123,7 +123,7 @@ def ReadData(filesLocation, filesList, numberOfFiles, WND_HEIGHT, WND_WIDTH, WND
 			if filesLocation != '': imageFilePath = filesLocation + "/" + tfile + cfg.ImageFileType
 			else: imageFilePath = imageFile.strip('\n') + cfg.ImageFileType
 
-			print "Reading " + imageFilePath
+			print ("Reading " + imageFilePath)
 
 			image = cv2.imread(imageFilePath, cv2.IMREAD_GRAYSCALE)
 
