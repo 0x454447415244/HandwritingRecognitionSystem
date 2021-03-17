@@ -1,0 +1,6 @@
+notes.txt
+*.pyc
+model
+summary
+clean.sh
+log
