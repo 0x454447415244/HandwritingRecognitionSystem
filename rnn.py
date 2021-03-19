@@ -6,7 +6,10 @@
 
 #!/usr/bin/python
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_eager_execution()
+import tensorflow as tf2
+
 import numpy as np
 import math
 
@@ -66,7 +69,8 @@ def RNN(Inputs, SeqLens, Scope):
 		###############################################################
 		#Construct LSTM layers
 
-		initializer = tf.contrib.layers.xavier_initializer()
+		#initializer = tf.contrib.layers.xavier_initializer()
+		initializer = tf2.initializers.GlorotUniform()
 
 		stacked_rnn_forward = []
 		for i in range(cfg.NLayers):

@@ -6,7 +6,9 @@
 
 #!/usr/bin/python
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_eager_execution()
+
 import sys
 import cv2
 import numpy as np
@@ -99,6 +101,7 @@ if (cfg.VAL_NB > 0): inputListVal, seqLensVal, targetListVal = ReadData(cfg.VAL_
 
 # Starting everything...
 LogFile.write("Initializing...\n\n")
+LogFile.flush()
 
 session = tf.Session()
 
@@ -117,6 +120,7 @@ try:
 		
 		LogFile.write("######################################################\n")
 		LogFile.write("Training Data\n")
+		LogFile.flush()
 
 		TrainingLoss = []
 		TrainingError = []
@@ -150,12 +154,14 @@ try:
 			del feed
 
 			SummaryWriter.add_summary(summary, epoch*totalIter + batch)
+			SummaryWriter.flush()
 			
 			numberOfInfElements = np.count_nonzero(np.isinf(Losses))
 			if numberOfInfElements > 0:
 				LogFile.write("WARNING: INF VALUE(S) FOUND!\n")
 				LogFile.write("%s\n" % (batchTargetList[np.where(np.isinf(Losses)==True)[0][0]]))
 				LogFile.write("Losses\n")
+				LogFile.flush()
 				Losses = filter(lambda v: ~np.isinf(v), Losses)
 				Loss = np.mean(Losses)		
 
@@ -166,6 +172,8 @@ try:
 
 			if currTrainLoss < Loss: LogFile.write("Bad\n")
 			else: LogFile.write("Good\n")
+
+			LogFile.flush()
 
 			start += cfg.BatchSize
 			end += cfg.BatchSize
@@ -182,12 +190,15 @@ try:
 		else:
 			LogFile.write("Training not imporving.\n")
 
+		LogFile.flush()
+
 		if (epoch + 1) % cfg.SaveEachNEpochs == 0:
 			SaveModel(session, cfg.SaveDir+'/'+cfg.ModelName, epoch)
 
 		if (cfg.VAL_NB > 0):
 
 			LogFile.write("\nValidation Data\n");
+			LogFile.flush()
 
 			session.run(tf.assign(phase_train, False))
 
@@ -222,6 +233,7 @@ try:
 				ValidationLoss.append(Loss)
 
 				LogFile.write("Batch: %d, Loss: %.6f, Error: %.6f\n" % (batch, Loss, Error))
+				LogFile.flush()
 
 				start += cfg.BatchSize
 				end += cfg.BatchSize
@@ -231,10 +243,12 @@ try:
 			ValidationError = np.mean(ValidationError)
 
 			LogFile.write("Validation loss: %.6f, Validation error: %.6f\n" % (ValidationLoss, ValidationError))
+			LogFile.flush()
 
 			feed = {OverallTrainingLoss: TrainingLoss, OverallTrainingError: TrainingError, OverallValidationLoss: ValidationLoss, OverallValidationError: ValidationError}
 	  		
 			SummaryWriter.add_summary(session.run([OverallSummary], feed_dict = feed)[0], epoch)
+			SummaryWriter.flush()
 			del feed
 
 			if ValidationLoss < currValLoss:
@@ -250,6 +264,8 @@ try:
 					sys.exit(0)
 
 			LogFile.write("######################################################\n\n")
+
+			LogFile.flush()
 
 except (KeyboardInterrupt, SystemExit, Exception) as e:
 	print("[Error/Interruption] %s\n" % str(e))

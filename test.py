@@ -7,7 +7,9 @@ from __future__ import print_function
 
 #!/usr/bin/python
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_eager_execution()
+
 import sys
 import os
 import cv2

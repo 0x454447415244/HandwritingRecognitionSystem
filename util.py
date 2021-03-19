@@ -6,7 +6,9 @@
 
 #!/usr/bin/python
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_eager_execution()
+
 import numpy as np
 import cv2
 import math
